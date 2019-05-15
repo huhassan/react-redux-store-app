@@ -11,3 +11,23 @@ This application is an implementation of the Ice Cream Store App Demo by Thomas 
 * Handling asynchronous data
 * A test-first approach to web development
 * Combining React and Redux
+
+## Course Summary
+### Running Tests Using Jest
+* running a test using the it function
+```javascript
+it('test name here', function() {
+    expect(true).toEqual(true);
+});
+```
+* running multiple tests
+```javascript
+describe('test group name', function() {
+    it('first test', function() {
+        expect(true).toEqual(true);
+    });
+    it('second test', function() {
+        expect(true).toEqual(true);
+    });    
+});
+```
