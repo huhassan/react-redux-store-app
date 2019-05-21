@@ -31,3 +31,48 @@ describe('test group name', function() {
     });    
 });
 ```
+### Actions
+* basic action with an optional payload
+```javascript
+const doSomething = (payloadValue = 'defaultPayloadValue') => ({
+    type: 'DO_SOMETHING',
+    payload: payloadValue
+});
+```
+### Reducers
+* reducer is a pure function that doesn't mutate the initial state
+```javascript
+const initialState = {
+    count: 0
+}
+
+function reducer(state = initialState, action) {
+    switch (action.type) {
+        case 'DO_SOMETHING',
+            return {
+                ...state,
+                count: state.count + action.payload
+            };
+    }
+}
+});
+```
+### Testing Reducers
+```javascript
+import { action, reducer } from './dir/to/them';
+
+describe('Counter', function () {
+    it('should have an initial state', function () {
+        const result = reducer();
+        expect(result.count).toEqual(0);
+    })
+})
+
+describe('Counter', function () {
+    it('should increase by one', function () {
+        const result = reducer();
+        const action = actionCreator()
+        expect(result.count).toEqual(1);
+    })
+})
+});
